@@ -1,0 +1,10 @@
+.big {
+    font-size: 50px;
+    font-weight: 900;
+}
+.small {
+    font-size: 8px;
+}
+#map {
+    height: 360px;
+}
