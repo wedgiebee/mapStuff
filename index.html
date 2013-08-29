@@ -1,38 +1,38 @@
 <html>
-	<head>
-		<title>Map Test Stuff</title>
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <head>
+        <title>Map Test Stuff</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
 
-		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-		<!--<script type="text/javascript" src="firstMap.js"></script>-->
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+        <!--<script type="text/javascript" src="firstMap.js"></script>-->
 
-		<style>
-			.big { 
-				font-size: 50px; 
-				font-weight: 900;
-			}
-			.small { 
-				font-size: 8px; 
-			}
-			#map {
-				height: 180px;
-			}
-		</style>
-	</head>
-	<body>
-		<p id="text" class="big">pythonchallenge</p>
-		<p class="small"> that's nice</p>
-		<span class="small"> whoop-de-doo</span>
-		<div id="map"></div>
+        <style>
+            .big { 
+                font-size: 50px; 
+                font-weight: 900;
+            }
+            .small { 
+                font-size: 8px; 
+            }
+            #map {
+                height: 180px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="text" class="big">pythonchallenge</p>
+        <p class="small"> that's nice</p>
+        <span class="small"> whoop-de-doo</span>
+        <div id="map"></div>
 
 
 
-		<script>
-			var map = L.map('map').setView([51.505, -0.09], 13);
-			L.tileLayer('http://{s}.tile.cloudmade.com/API-key/997/256/{z}/{x}/{y}.png', {
+        <script>
+            var map = L.map('map').setView([51.505, -0.09], 13);
+            L.tileLayer('http://{s}.tile.cloudmade.com/API-key/997/256/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
     maxZoom: 18
 }).addTo(map);
-		</script>
-	</body>
+        </script>
+    </body>
 </html>
