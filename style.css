@@ -2,6 +2,18 @@ body {
     padding: 0;
     margin: 0;
 }
-html, body, #map {
+html, body, #wrapper {
     height: 100%;
+    width: 100%;
+}
+
+#input {
+    height: 100%;
+    width: 40%;
+    float:left;
+}
+
+#map {
+    height: 100%;
+    width: 60%;
 }

@@ -12,7 +12,7 @@ OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap<
 southWest = new L.LatLng(34.018259,-118.291372),
     northEast = new L.LatLng(34.026217,-118.278358),
     boundGalores = new L.LatLngBounds(southWest, northEast);
-    debugger;
+    //debugger;
 
 var map = L.map('map').setView([34.02, -118.29], 18);
 L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/256/{z}/{x}/{y}.png', {
@@ -38,13 +38,20 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
 //]).addTo(map).bindPopup("I am a polygon.");
 
 
-//var popup = L.popup();
+var popup = L.popup();
 
-//function onMapClick(e) {
-    //popup
-        //.setLatLng(e.latlng)
-        //.setContent("You clicked the map at " + e.latlng.toString())
-        //.openOn(map);
-//}
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+map.on('click', onMapClick);
 
-//map.on('click', onMapClick);
+$.getJSON('buildings.json', function(data) {
+    console.log(data);
+});
+
+$(".chosen-select").chosen();
+$(".my_select_box").chosen();
+
