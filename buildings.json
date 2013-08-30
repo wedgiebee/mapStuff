@@ -1,25 +1,25 @@
-{   "WPH" : { "name" : ""
+{   "WPH" : { "name" : "Waite Phillips Hall"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "VKC" : { "name" : ""
+,   "VKC" : { "name" : "Von KleinSmid Center"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "TTH" : { "name" : ""
+,   "TTH" : { "name" : "Taper Hall"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "PED" : { "name" : ""
+,   "PED" : { "name" : "Physical Education Building"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "GFS" : { "name" : ""
+,   "GFS" : { "name" : "Grace Ford Salvatori Hall"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "MHP" : { "name" : ""
+,   "MHP" : { "name" : "Mudd Hall "
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "SGM" : { "name" : ""
+,   "SGM" : { "name" : "Seeley G. Mudd Building"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
-,   "KAP" : { "name" : ""
+,   "KAP" : { "name" : "Kaprielian Hall"
             , "description": ""
             , "latlng" : [0.0, 0.0]}
 ,   "EVK" : { "name" : "Everybody's Kitchen"
