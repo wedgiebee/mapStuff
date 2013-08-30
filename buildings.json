@@ -1,31 +1,31 @@
 {   "WPH" : { "name" : "Waite Phillips Hall"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02195, -118.2838]}
 ,   "VKC" : { "name" : "Von KleinSmid Center"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02116, -118.28394]}
 ,   "TTH" : { "name" : "Taper Hall"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02223, -118.28456]}
 ,   "PED" : { "name" : "Physical Education Building"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02137, -118.28647]}
 ,   "GFS" : { "name" : "Grace Ford Salvatori Hall"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02134, -118.28808]}
 ,   "MHP" : { "name" : "Mudd Hall "
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.01864, -118.28681]}
 ,   "SGM" : { "name" : "Seeley G. Mudd Building"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02139, -118.28907]}
 ,   "KAP" : { "name" : "Kaprielian Hall"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02248, -118.29106]}
 ,   "EVK" : { "name" : "Everybody's Kitchen"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.0214, -118.28209]}
 ,   "KOH" : { "name" : "Cafe 84"
             , "description": ""
-            , "latlng" : [0.0, 0.0]}
+            , "latlng" : [34.02476, -118.28802]}
 }
