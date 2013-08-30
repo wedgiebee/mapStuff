@@ -1,0 +1,31 @@
+{   "WPH" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "VKC" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "TTH" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "PED" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "GFS" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "MHP" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "SGM" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "KAP" : { "name" : ""
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "EVK" : { "name" : "Everybody's Kitchen"
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+,   "KOH" : { "name" : "Cafe 84"
+            , "description": ""
+            , "latlng" : [0.0, 0.0]}
+}

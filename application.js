@@ -9,14 +9,15 @@ OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 //var map = L.map('map').setView([51.505, -0.09], 13);
-var southWest = new L.LatLng(34.018259,-118.291372),
+southWest = new L.LatLng(34.018259,-118.291372),
     northEast = new L.LatLng(34.026217,-118.278358),
-    bounds = new L.LatLngBounds(southWest, northEast);
+    boundGalores = new L.LatLngBounds(southWest, northEast);
+    debugger;
 
 var map = L.map('map').setView([34.02, -118.29], 18);
 L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/256/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    maxBounds: bounds,
+    maxBounds: boundGalores,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
