@@ -22,6 +22,17 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
 }).addTo(map);
 
 
+function mouseLatLng(e) {
+    console.log(e.latlng);
+    return e.latlng;
+}
+
+map.on('click', mouseLatLng);
+
+
+
+
+
 //L.marker([51.5, -0.09]).addTo(map)
     //.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
