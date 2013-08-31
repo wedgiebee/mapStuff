@@ -63,6 +63,3 @@ $.getJSON('buildings.json', function(data) {
     console.log(data);
 });
 
-$(".chosen-select").chosen();
-$(".my_select_box").chosen();
-
