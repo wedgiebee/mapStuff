@@ -3,6 +3,7 @@
     <head>
         <title>Map Test Stuff</title>
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.css" />
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
         <![endif]-->
@@ -11,11 +12,9 @@
     <body>
         <div id="wrapper">
             <div id="input">
-<select class="my_select_box" multiple data-placeholder="Select Your Options">
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 2</option>
-</select>
+<p>
+     <input type="hidden" id="buildings" style="width:300px"/>
+</p>
             </div>
             <div id="map" class="map"></div>
         </div>

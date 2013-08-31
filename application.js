@@ -9,7 +9,7 @@ OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 //var map = L.map('map').setView([51.505, -0.09], 13);
-southWest = new L.LatLng(34.018259,-118.291372),
+var southWest = new L.LatLng(34.018259,-118.291372),
     northEast = new L.LatLng(34.026217,-118.278358),
     boundGalores = new L.LatLngBounds(southWest, northEast);
     //debugger;
@@ -47,7 +47,25 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
 
-$.getJSON('buildings.json', function(data) {
+var buildings = {};
+$.getJSON('buildings2.json', function(data) {
+    buildings = data;
     console.log(data);
 });
 
+//$("#buildings").select2({
+    //placeholder: "Select a building"
+//});
+
+var data=[{id:0,tag:'enhancement'},{id:1,tag:'bug'},{id:2,tag:'duplicate'},{id:3,tag:'invalid'},{id:4,tag:'wontfix'}];
+function format(item) { return item.tag; };
+
+//$("#buildings").select2({
+            //data:[{id:0,text:'enhancement'},{id:1,text:'bug'},{id:2,text:'duplicate'},{id:3,text:'invalid'},{id:4,text:'wontfix'}]
+        //});
+
+$("#buildings").select2({
+            data:{ results: data, text: 'tag' },
+            formatSelection: format,
+            formatResult: format
+        });
