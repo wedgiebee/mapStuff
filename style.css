@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+#buildings {
+    width:40%;
+}
+
 #map {
     height: 540px;
     width: 90%;
@@ -49,4 +53,9 @@ body {
         position: relative;
         padding: 0px 0px 0px;
     }
+
+    #buildings {
+        width:100%;
+    }
+
 }
