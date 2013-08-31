@@ -1,20 +1,10 @@
-
-var CM_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-          'Imagery © <a href="http://cloudmade.com">CloudMade</a>';
-
-var CM_URL = 'http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/{styleId}/256/{z}/{x}/{y}.png';
-
-var OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-var OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-
 //var map = L.map('map').setView([51.505, -0.09], 13);
 var southWest = new L.LatLng(34.018259,-118.291372),
     northEast = new L.LatLng(34.026217,-118.278358),
     boundGalores = new L.LatLngBounds(southWest, northEast);
     //debugger;
 
-var map = L.map('map').setView([34.02, -118.29], 17);
+var map = L.map('map').setView([34.02179, -118.2867], 17);
 L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/256/{z}/{x}/{y}.png', {
     maxZoom: 18,
     maxBounds: boundGalores,
@@ -52,6 +42,8 @@ map.on('click', onMapClick);
 
 var buildings = [];
 
+function format(item) { return item.name + " (" + item.initials + ")" }
+
 $.getJSON('buildings2.json', function(data) {
     buildings = data;
 
@@ -64,9 +56,4 @@ $.getJSON('buildings2.json', function(data) {
     });
 
 });
-
-var data=[{id:0,tag:'enhancement'},{id:1,tag:'bug'},{id:2,tag:'duplicate'},{id:3,tag:'invalid'},{id:4,tag:'wontfix'}];
-function format(item) { return item.name; }
-
-console.log(buildings);
 
