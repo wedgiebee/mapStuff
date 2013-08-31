@@ -47,25 +47,22 @@ function onMapClick(e) {
 }
 map.on('click', onMapClick);
 
-var buildings = {};
+var buildings = [];
 $.getJSON('buildings2.json', function(data) {
     buildings = data;
-    console.log(data);
+
 });
 
+var data=[{id:0,tag:'enhancement'},{id:1,tag:'bug'},{id:2,tag:'duplicate'},{id:3,tag:'invalid'},{id:4,tag:'wontfix'}];
+function format(item) { return item.tag; }
+
 //$("#buildings").select2({
-    //placeholder: "Select a building"
+    //data:[{id:0,text:'enhancement'},{id:1,text:'bug'},{id:2,text:'duplicate'},{id:3,text:'invalid'},{id:4,text:'wontfix'}]
 //});
 
-var data=[{id:0,tag:'enhancement'},{id:1,tag:'bug'},{id:2,tag:'duplicate'},{id:3,tag:'invalid'},{id:4,tag:'wontfix'}];
-function format(item) { return item.tag; };
-
-//$("#buildings").select2({
-            //data:[{id:0,text:'enhancement'},{id:1,text:'bug'},{id:2,text:'duplicate'},{id:3,text:'invalid'},{id:4,text:'wontfix'}]
-        //});
-
 $("#buildings").select2({
-            data:{ results: data, text: 'tag' },
-            formatSelection: format,
-            formatResult: format
-        });
+    placeholder: "Select a building",
+    data:{ results: data, text: 'tag' },
+    formatSelection: format,
+    formatResult: format
+});
