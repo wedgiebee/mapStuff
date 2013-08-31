@@ -9,7 +9,7 @@ body {
 
 #map {
     height: 540px;
-    width: 60%;
+    width: 90%;
     /* http://www.w3.org/Style/Examples/007/center.en.html */
     margin-left: auto;
     margin-right: auto;
@@ -19,4 +19,18 @@ body {
     background: white;
     position: relative;
     padding: 15px 40px 20px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries */
+
+@media (max-width: 800px){
+    #map {
+        width: 100%;
+    }
+
+    .container {
+        background: white;
+        position: relative;
+        padding: 0px 0px 0px;
+    }
 }
