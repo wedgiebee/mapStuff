@@ -1,3 +1,4 @@
+/* I really don't understand CSS queries yet... */
 body {
     padding: 0;
     margin: 0;
@@ -22,10 +23,25 @@ body {
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries */
+/* http://stackoverflow.com/a/10887013/198348 */
 
 @media (max-width: 800px){
+    #input {
+        bottom: 0;
+        height: 20%;
+    }
+
     #map {
         width: 100%;
+        height: 80%;
+        top: 0;
+    }
+
+    #input,
+    #map {
+        position: fixed;
+        left: 0;
+        right: 0;
     }
 
     .container {

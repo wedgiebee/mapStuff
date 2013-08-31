@@ -6,7 +6,7 @@ var currentBuildings = {};
 
 var map = L.map('map').setView([34.02179, -118.2867], 17);
 L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/256/{z}/{x}/{y}.png', {
-    minZoom: 16,
+    minZoom: 15,
     maxZoom: 18,
     maxBounds: boundGalores,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
