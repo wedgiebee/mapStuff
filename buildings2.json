@@ -23,7 +23,7 @@
             , "initials"    : "GFS"
             , "description" : ""
             , "latlng"      : [34.02134, -118.28808]}
-,           { "name"        : "Mudd Hall "
+,           { "name"        : "Mudd Hall"
             , "id"          : 5
             , "initials"    : "MHP"
             , "description" : ""
@@ -48,4 +48,10 @@
             , "initials"    : "KOH"
             , "description" : ""
             , "latlng"      : [34.02476, -118.28802]}
+,           { "name"        : "Ground Zero Performance"
+            , "id"          : 10
+            , "initials"    : "TRO"
+            , "description" : ""
+            , "latlng"      : [34.01951, -118.28219]}
+
 ]

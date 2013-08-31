@@ -46,7 +46,7 @@ $.getJSON('buildings2.json', function(data) {
     buildings = data;
     $("#buildings").select2({
         placeholder: "Select a building",
-        data:{ results: data, text: 'initials' },
+        data:{ results: data, text: 'name' },
         multiple: true,
         formatSelection: format,
         formatResult: format
