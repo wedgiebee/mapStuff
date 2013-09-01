@@ -4,6 +4,12 @@ body {
     margin: 0;
 }
 
+.text {
+    font-family: 'Quattrocento', serif;
+    font-weight: 400; 
+    text-align: center;
+}
+
 #input {
     text-align: center;
 }
