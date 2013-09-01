@@ -2,7 +2,6 @@
 var southWest = new L.LatLng(34.01654, -118.2945),
     northEast = new L.LatLng(34.03463, -118.27435),
     center = new L.LatLng(34.02179, -118.2867);
-    boundGalores = new L.LatLngBounds(southWest, northEast);
 var currentBuildings = {};
 var currentZoom = 16;
 
@@ -13,19 +12,8 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
-// click event handler
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
-//map.on('click', onMapClick);
-
 // loading buildings
+
 function format(item) { return item.name + " (" + item.initials + ")"; }
 
 $.getJSON('buildings2.json', function(data) {
@@ -38,18 +26,37 @@ $.getJSON('buildings2.json', function(data) {
     });
 });
 
+// various event handlers
+//
+var popup = L.popup();
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+//map.on('click', onMapClick);
+
+function addCircle(item){
+    var circle = L.circle(item.latlng, 50, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(map);
+    currentBuildings[item.id] = circle;
+}
+
+function removeCircle(item){
+    map.removeLayer(currentBuildings[item.id]);
+    delete currentBuildings[item.id];
+}
+
 $("#buildings").on("change", function(e){
     if (e.hasOwnProperty('added')){
-        var circle = L.circle(e.added.latlng, 50, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5
-        }).addTo(map);
-        currentBuildings[e.added.id] = circle;
+        addCircle(e.added);
     }
     if (e.hasOwnProperty('removed')){
-        map.removeLayer(currentBuildings[e.removed.id]);
-        delete currentBuildings[e.removed.id];
+        removeCircle(e.removed);
     }
 });
 
@@ -64,3 +71,11 @@ $("#clear").on("click", function(){
 $("#center").on("click", function(){
     map.panTo(center).setZoom(currentZoom);
 });
+
+//var location = $.url().param("locations");
+//if (location){
+    //var selected = location.split(",");
+    //for (var s in selected){
+        //console.log(s);
+    //}
+//}
