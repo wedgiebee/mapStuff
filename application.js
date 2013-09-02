@@ -3,6 +3,7 @@ var southWest = new L.LatLng(34.01654, -118.2945),
     northEast = new L.LatLng(34.03463, -118.27435),
     center = new L.LatLng(34.02179, -118.2867);
 var currentBuildings = {};
+var allBuildings = {};
 var currentZoom = 16;
 
 var map = L.map('map', {center: center, zoom:currentZoom});
@@ -17,6 +18,11 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
 function format(item) { return item.name + " (" + item.initials + ")"; }
 
 $.getJSON('buildings2.json', function(data) {
+    for (var i=0; i < data.length; i++){
+        var k = data[i].initials.toLowerCase();
+        allBuildings[k] = data[i];
+    }
+
     $("#buildings").select2({
         placeholder: "Select a building",
         data:{ results: data, text: 'name' },
@@ -26,16 +32,7 @@ $.getJSON('buildings2.json', function(data) {
     });
 });
 
-// various event handlers
-//
-var popup = L.popup();
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
-//map.on('click', onMapClick);
+// add and remove locations
 
 function addCircle(item){
     var circle = L.circle(item.latlng, 50, {
@@ -50,6 +47,17 @@ function removeCircle(item){
     map.removeLayer(currentBuildings[item.id]);
     delete currentBuildings[item.id];
 }
+
+// various event handlers
+
+var popup = L.popup();
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+//map.on('click', onMapClick);
 
 $("#buildings").on("change", function(e){
     if (e.hasOwnProperty('added')){
@@ -72,10 +80,13 @@ $("#center").on("click", function(){
     map.panTo(center).setZoom(currentZoom);
 });
 
-//var location = $.url().param("locations");
-//if (location){
-    //var selected = location.split(",");
-    //for (var s in selected){
-        //console.log(s);
-    //}
-//}
+var selected = $.url().param("selected");
+if (selected === undefined)
+    selected = "";
+var selected = selected.split(",");
+
+for (var s in selected){
+    var sword = selected[s].toLowerCase();
+    var item = allBuildings[sword];
+    console.log(item);
+}
