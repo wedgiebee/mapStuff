@@ -1,0 +1,4 @@
+// https://github.com/Maciek416/jshintrc/blob/master/.jshintrc
+{
+  "globals": {"L": true}
+}

@@ -23,7 +23,7 @@ $.getJSON('buildings2.json', function(data) {
         allBuildings[k] = data[i];
     }
 
-    $("#buildings").select2({
+    $(".buildings").select2({
         placeholder: "Select a building",
         data:{ results: data, text: 'name' },
         multiple: true,
@@ -35,12 +35,15 @@ $.getJSON('buildings2.json', function(data) {
 // add and remove locations
 
 function addCircle(item){
-    var circle = L.circle(item.latlng, 50, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(map);
-    currentBuildings[item.id] = circle;
+    //var circle = L.circle(item.latlng, 50, {
+        //color: 'red',
+        //fillColor: '#f03',
+        //fillOpacity: 0.5
+    //}).addTo(map);
+    var marker= L.marker(item.latlng)
+                 .bindPopup(format(item))
+                 .addTo(map);
+    currentBuildings[item.id] = marker;
 }
 
 function removeCircle(item){
@@ -59,7 +62,7 @@ function onMapClick(e) {
 }
 //map.on('click', onMapClick);
 
-$("#buildings").on("change", function(e){
+$(".buildings").on("change", function(e){
     if (e.hasOwnProperty('added')){
         addCircle(e.added);
     }
@@ -68,15 +71,15 @@ $("#buildings").on("change", function(e){
     }
 });
 
-$("#clear").on("click", function(){
+$(".clear").on("click", function(){
     for (var building in currentBuildings){
         map.removeLayer(currentBuildings[building]);
     }
     currentBuildings = {};
-    $("#buildings").select2("val", "");
+    $(".buildings").select2("val", "");
 });
 
-$("#center").on("click", function(){
+$(".center").on("click", function(){
     map.panTo(center).setZoom(currentZoom);
 });
 

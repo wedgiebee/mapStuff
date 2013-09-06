@@ -53,5 +53,15 @@
             , "initials"    : "TRO"
             , "description" : ""
             , "latlng"      : [34.01951, -118.28219]}
+,           { "name"        : "Leavey Library"
+            , "id"          : 11
+            , "initials"    : "LVL"
+            , "description" : ""
+            , "latlng"      : [34.0216789246,-118.2830200195]}
+,           { "name"        : "McCarthy Quad"
+            , "id"          : 11
+            , "initials"    : ""
+            , "description" : ""
+            , "latlng"      : [34.0209236145,-118.2831344604]}
 
 ]

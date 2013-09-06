@@ -10,15 +10,15 @@ body {
     text-align: center;
 }
 
-#input {
+.input {
     text-align: center;
 }
 
-#buildings {
+.buildings {
     width:40%;
 }
 
-#map {
+.map {
     height: 540px;
     width: 90%;
     /* http://www.w3.org/Style/Examples/007/center.en.html */
@@ -36,19 +36,19 @@ body {
 /* http://stackoverflow.com/a/10887013/198348 */
 
 @media (max-width: 800px){
-    #input {
+    .input {
         bottom: 0;
         height: 20%;
     }
 
-    #map {
+    .map {
         width: 100%;
         height: 80%;
         top: 0;
     }
 
-    #input,
-    #map {
+    .input,
+    .map {
         position: fixed;
         left: 0;
         right: 0;
@@ -57,11 +57,7 @@ body {
     .container {
         background: white;
         position: relative;
-        padding: 0px 0px 0px;
-    }
-
-    #buildings {
-        width:100%;
+        padding: 0 0 0;
     }
 
 }
