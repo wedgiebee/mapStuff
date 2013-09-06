@@ -15,7 +15,11 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
 
 // loading buildings
 
-function format(item) { return item.name + " (" + item.initials + ")"; }
+function format(item) {
+    if (item.initials)
+        return item.name + " (" + item.initials + ")";
+    return item.name;
+}
 
 $.getJSON('buildings2.json', function(data) {
     for (var i=0; i < data.length; i++){
