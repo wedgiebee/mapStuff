@@ -13,8 +13,39 @@ L.tileLayer('http://{s}.tile.cloudmade.com/f8a4bd5801d64e6c8d0845c5b32ff0cd/997/
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
-// loading buildings
+// add and remove locations, selection, etc.
+function addCircle(item){
+    //var circle = L.circle(item.latlng, 50, {
+        //color: 'red',
+        //fillColor: '#f03',
+        //fillOpacity: 0.5
+    //}).addTo(map);
+    var marker= L.marker(item.latlng)
+                 .bindPopup(format(item))
+                 .addTo(map);
+    currentBuildings[item.id] = marker;
+}
 
+function removeCircle(item){
+    map.removeLayer(currentBuildings[item.id]);
+    delete currentBuildings[item.id];
+}
+
+function addSelected() {
+    var selected = $.url().param("selected");
+    if (selected === undefined)
+        selected = "";
+    selected = selected.split(",");
+
+    for (var s in selected){
+        var sword = selected[s].toLowerCase();
+        var item = allBuildings[sword];
+        //console.log(item);
+        addCircle(item);
+    }
+}
+
+// loading buildings
 function format(item) {
     if (item.initials)
         return item.name + " (" + item.initials + ")";
@@ -34,26 +65,9 @@ $.getJSON('buildings2.json', function(data) {
         formatSelection: format,
         formatResult: format
     });
+
+    addSelected();
 });
-
-// add and remove locations
-
-function addCircle(item){
-    //var circle = L.circle(item.latlng, 50, {
-        //color: 'red',
-        //fillColor: '#f03',
-        //fillOpacity: 0.5
-    //}).addTo(map);
-    var marker= L.marker(item.latlng)
-                 .bindPopup(format(item))
-                 .addTo(map);
-    currentBuildings[item.id] = marker;
-}
-
-function removeCircle(item){
-    map.removeLayer(currentBuildings[item.id]);
-    delete currentBuildings[item.id];
-}
 
 // various event handlers
 
@@ -87,13 +101,3 @@ $(".center").on("click", function(){
     map.panTo(center).setZoom(currentZoom);
 });
 
-var selected = $.url().param("selected");
-if (selected === undefined)
-    selected = "";
-var selected = selected.split(",");
-
-for (var s in selected){
-    var sword = selected[s].toLowerCase();
-    var item = allBuildings[sword];
-    console.log(item);
-}
