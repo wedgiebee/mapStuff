@@ -1,0 +1,22 @@
+mobile:
+    - make header appear above and comments appear below.
+    - make scalable
+
+use query params
+    - buildings=tth,evk,vkc
+        - this circumvents the selection in the input box.
+        - URI.js looks to be better than purl.js
+    - category=dining,residential,courses,recreational
+accept alternative JSON file
+    - json=linktojson
+disable building titles in Leafletjs
+
+uri.js:
+    - http://medialize.github.io/URI.js/
+
+purl:
+    - change url params from javascript
+        - it's possible (sciencevsmagic.net/geo)
+        - https://github.com/allmarkedup/purl/issues/55
+    - support #-style query params
+         - https://github.com/allmarkedup/purl/issues/47
